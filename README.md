@@ -14,6 +14,11 @@ This app is written in Ruby on Rails.
 ### Problem Statement
 Making improvements on movie reviews apps.
 
+### UML Diagram
+
+![QuickDBD-export](https://user-images.githubusercontent.com/40468678/117824431-65d81380-b266-11eb-8060-bc8d3b2d4262.png)
+
+
 ----
 
 
