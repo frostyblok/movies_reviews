@@ -26,7 +26,8 @@ module Movies
       user = User.find_or_create_by(name: row[1])
       return "The movie you tried to rate does not exist please try again" unless movie.present?
 
-      Review.create!(star_rating: row[2], comment: row[3], movie: movie, user: user)
+      # Review.create!(star_rating: row[2], comment: row[3], movie: movie, user: user)
+      movie.reviews << Review.new(star_rating: row[2], comment: row[3], user: user)
     end
   end
 
