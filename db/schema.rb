@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 2021_05_11_101835) do
     t.string "name"
     t.text "description"
     t.string "director"
-    t.jsonb "actors", default: {}, null: false
-    t.jsonb "filming_locations", default: {}, null: false
-    t.jsonb "countries", default: {}, null: false
+    t.jsonb "actors", default: [], null: false
+    t.jsonb "filming_locations", default: [], null: false
+    t.jsonb "countries", default: [], null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "year"
