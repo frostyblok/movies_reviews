@@ -15,9 +15,9 @@
 						<h5 class="card-title"><%= movie.name %></h5>
 						<h6 class="card-subtitle mb-2 text-muted"><%= movie.year %></h6>
 						<p class="card-text truncate-text"><%= movie.description %></p>
-						<p class="card-text"><span>Actors: </span><%= movie.actors.map {|sen| sen["actor"]}.uniq.join(', ') %></p>
-						<p class="card-text">Locations: <%= movie.filming_locations.map {|sen| sen["location"]}.uniq.join(' ') %></p>
-						<p class="card-text">Countries: <%= movie.countries.map {|sen| sen["country"]}.uniq.join(', ') %></p>
+						<p class="card-text"><span>Actors: </span><%= display_movie_attributes(movie.actors, "actor") %></p>
+						<p class="card-text">Locations: <%= display_movie_attributes(movie.filming_locations, "locator") %></p>
+						<p class="card-text">Countries: <%= display_movie_attributes(movie.countries, "country") %></p>
 						<p class="card-text">Average rating: <%= movie.average_rating %></p>
 					</div>
 				</div>
