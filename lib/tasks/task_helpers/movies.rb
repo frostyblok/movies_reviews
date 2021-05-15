@@ -25,9 +25,9 @@ module Movies
   def import_reviews
     CSV.parse(file_content("reviews"), headers: true) do |row|
       movie = Movie.find_by(name: row[0])
-      user = User.find_or_create_by(name: row[1])
       return "The movie you tried to rate does not exist please try again" unless movie.present?
 
+      user = User.find_or_create_by(name: row[1])
       movie.reviews << Review.(star_rating: row[2], comment: row[3], user: user)
     end
   end
@@ -38,6 +38,6 @@ module Movies
   end
 
   def attribute_exists?(model_attribute, locator, attribute)
-    model_attribute.map {|sen| sen[locator]}.include? attribute
+    model_attribute.map {|attr| attr[locator]}.include? attribute
   end
 end
